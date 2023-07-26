@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            flex: {
+              2: "2 2 0%",
+            },
+            screens: {
+              sm: "500px",
+              md: "600px",
+              lg: "976px",
+              xl: "1440px",
+            },
+            colors: {
+              darkViolet: "hsl(235,18%,26%,1)",
+              rose: "hsl(348, 100%, 66%, 1)",
+              orange: "hsl(12,100%,63%,1)",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="md:bg-darkViolet min-h-screen flex md:items-center md:justify-center mx-auto md:mx-2"
+  >
+    <!-- Hero Content -->
+    <section
+      id="hero-success"
+      class="hidden bg-white flex flex-col md:rounded-2xl p-5 md:px-14 md:py-10 space-y-10 md:max-w-md justify-center"
+    >
+      <div class="flex-1 md:flex-0 relative">
+        <div class="absolute md:static bottom-0">
+          <img src="./assets/images/icon-success.svg" class="md:w-14" />
+        </div>
+      </div>
+      <div class="flex flex-col justify-between flex-2 md:flex-0">
+        <div>
+          <h2 class="text-4xl antialiased font-semibold text-darkViolet">
+            Thanks for subscribing!
+          </h2>
+          <p class="mt-7 antialiased">
+            A confirmation email has been sent to
+            <span class="font-semibold" id="email-user"></span> Please open it
+            and click then button inside to confirm your subscription.
+          </p>
+        </div>
+        <div>
+          <button
+            id="succes-btn"
+            class="md:mt-10 w-full bg-darkViolet text-white font-medium rounded-md p-3 antialiased focus:shadow-lg focus:shadow-gray-200 transition-all duration-300 hover:shadow-lg hover:shadow-rose/60 focus:shadow-lg focus:shadow-rose/60 hover:bg-gradient-to-r focus:bg-gradient-to-r hover:from-rose focus:from-rose hover:to-orange focus:to-orange"
+          >
+            Dismiss message
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="hero-form"
+      class="bg-white flex flex-col md:flex-row md:rounded-2xl md:p-4"
+    >
+      <div class="p-5 md:p-10 flex flex-col md:justify-center">
+        <!-- Info section -->
+        <section class="flex flex-col space-y-6 text-darkViolet">
+          <h1 class="text-4xl lg:text-5xl font-bold antialiased text-left">
+            Stay updated!
+          </h1>
+          <p class="antialiased font-medium">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <!-- List -->
+          <ul class="space-y-4">
+            <li class="flex space-x-4">
+              <img src="./assets/images/icon-list.svg" />
+              <p class="font-medium antialiased">
+                Product discovery and building what matters
+              </p>
+            </li>
+            <li class="flex space-x-4">
+              <img src="./assets/images/icon-list.svg" />
+              <p class="font-medium antialiased">
+                Measuring to ensure update are a success
+              </p>
+            </li>
+            <li class="flex space-x-4">
+              <img src="./assets/images/icon-list.svg" />
+              <p class="font-medium antialiased">And much more!</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section Form Content -->
+        <section class="md:mt-10 mt-6 text-darkViolet">
+          <form class="flex flex-col space-y-4" id="email-form">
+            <div class="flex justify-between">
+              <span class="antialiased font-medium">Email address</span>
+              <span
+                id="error-input"
+                class="hidden text-red-500 antialiased"
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="border-2 p-3 pl-4 rounded-lg antialiased"
+              placeholder="email@company.com"
+              id="email-input"
+            />
+            <button
+              type="submit"
+              class="w-full bg-darkViolet text-white font-medium rounded-md p-3 antialiased focus:shadow-lg focus:shadow-gray-200 transition-all duration-300 hover:shadow-lg hover:shadow-rose/60 focus:shadow-lg focus:shadow-rose/60 hover:bg-gradient-to-r focus:bg-gradient-to-r hover:from-rose focus:from-rose hover:to-orange focus:to-orange"
+            >
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </section>
+      </div>
+      <div
+        class="md:flex md:justify-center md:items-center order-first md:order-none"
+      >
+        <section>
+          <img
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            class="md:hidden w-full"
+          />
+          <img
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            class="md:block hidden"
+          />
+        </section>
+      </div>
+    </section>
+  </body>
+</html>
